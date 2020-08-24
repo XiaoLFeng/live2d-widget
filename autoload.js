@@ -1,5 +1,5 @@
 // 注意：live2d_path 参数应使用绝对路径
-const live2d_path = "https://widget.xiaolfeng.top/";
+const live2d_path = "https://cdn.jsdelivr.net/gh/XiaoLFeng/live2d-widget@latest/";
 //const live2d_path = "/live2d-widget/";
 
 // 封装异步加载资源的方法
@@ -24,6 +24,14 @@ function loadExternalResource(url, type) {
 	});
 }
 
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?53a96d55c7498cb46a26c62443cf7225";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
 // 加载 waifu.css live2d.min.js waifu-tips.js
 if (screen.width >= 768) {
 	Promise.all([
@@ -33,16 +41,19 @@ if (screen.width >= 768) {
 	]).then(() => {
 		initWidget({
 			waifuPath: live2d_path + "waifu-tips.json",
-			//apiPath: "https://live2d.fghrsh.net/api/",
-			cdnPath: "https://live2d.xiaolfeng.top/"
+			//apiPath: "https://live2d.xiaolfeng.top/",
+			cdnPath: "https://cdn.jsdelivr.net/gh/XiaoLFeng/Live2D-API@latest/"
 		});
 	});
 }
 // initWidget 第一个参数为 waifu-tips.json 的路径，第二个参数为 API 地址
 // API 后端可自行搭建，参考 https://github.com/fghrsh/live2d_api
 // 初始化看板娘会自动加载指定目录下的 waifu-tips.json
+// 下方版权文件可以删除，不过还是建议保留QAQ
 
 console.log(`
+Live2D图形作者：筱锋xiao_lfeng
+Docs文档：https://www.xiaolfeng.cn/doc-live2d.html
   く__,.ヘヽ.        /  ,ー､ 〉
            ＼ ', !-─‐-i  /  /´
            ／｀ｰ'       L/／｀ヽ､
