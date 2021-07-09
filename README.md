@@ -1,4 +1,4 @@
-# Live2D后端API
+# Live2D前端API
 
 服务器状态监控系统：[筱锋服务器状态监控](https://status.xiaolfeng.cn/)
 
